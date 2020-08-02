@@ -2,6 +2,5 @@
 examples on functional programming concepts using javascript
 
 ## How to run
-``` npm install
-    node examples/curry.js
-```
+``` npm install ```
+``` node examples/curry.js  ```
