@@ -5,7 +5,8 @@ const fact = n => {
 const factMemoise = (n, cache={}) => {
     if (n === 1 || n === 0) return 1;
     if (cache[n]) return cache[n];
-    return fact(n - 1, cache) + fact(n - 2, cache);
+    else cache[n] = fact(n - 1, cache) + fact(n - 2, cache);
+    return cache[n];
 }
 const factorialBottomUp = n => {
     let a = b = 1;
