@@ -2,14 +2,10 @@ const fact = n => {
     if (n === 1 || n === 0) return 1;
     return fact(n - 1) + fact(n - 2)
 }
-const factMemoise = (n, cache) => {
+const factMemoise = (n, cache={}) => {
     if (n === 1 || n === 0) return 1;
-    if (!cache) cache = {};
-
     if (cache[n]) return cache[n];
-    else cache[n] = fact(n - 1, cache) + fact(n - 2, cache);
-    
-    return cache[n];
+    return fact(n - 1, cache) + fact(n - 2, cache);
 }
 const factorialBottomUp = n => {
     let a = b = 1;
