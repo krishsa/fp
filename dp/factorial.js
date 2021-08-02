@@ -9,9 +9,9 @@ const factMemoise = (n, cache={}) => {
     return cache[n];
 }
 const factorialBottomUp = n => {
-    let a = b = 1;
-    for (let i = 2; i <= n; i++) [a, b] = [b, a + b];
-    return b;
+    let a = totalInSubprocess = 1;//first two elements are 1
+    for (let i = 2; i <= n; i++) [a, totalInSubprocess] = [totalInSubprocess, a + totalInSubprocess];
+    return totalInSubprocess;
 }
 // 0 1 2 3 4 5 6
 // 1 1 2 3 5 8 13
