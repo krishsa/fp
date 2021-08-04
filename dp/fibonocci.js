@@ -1,20 +1,20 @@
-const fact = n => {
+const fibonocci = n => {
     if (n === 1 || n === 0) return 1;
-    return fact(n - 1) + fact(n - 2)
+    return fibonocci(n - 1) + fibonocci(n - 2)
 }
-const factMemoise = (n, cache={}) => {
+const fibonocciMemoise = (n, cache={}) => {
     if (n === 1 || n === 0) return 1;
     if (cache[n]) return cache[n];
-    else cache[n] = fact(n - 1, cache) + fact(n - 2, cache);
+    else cache[n] = fibonocci(n - 1, cache) + fibonocci(n - 2, cache);
     return cache[n];
 }
-const factorialBottomUp = n => {
+const fibonocciBottomUp = n => {
     let a = totalInSubprocess = 1;//first two elements are 1
     for (let i = 2; i <= n; i++) [a, totalInSubprocess] = [totalInSubprocess, a + totalInSubprocess];
     return totalInSubprocess;
 }
 // 0 1 2 3 4 5 6
 // 1 1 2 3 5 8 13
-console.log(factorialBottomUp(5) == 8);
-console.log(fact(5) == 8);
-console.log(factMemoise(5) == 8);
+console.log(fibonocciBottomUp(5) == 8);
+console.log(fibonocci(5) == 8);
+console.log(fibonocciMemoise(5) == 8);
