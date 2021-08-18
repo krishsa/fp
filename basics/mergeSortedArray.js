@@ -42,7 +42,7 @@ var merge = function(nums1, m, nums2, n) {
     let i = 0; j = 0;
     let q =[];
     
-    while(j < n || i < (m + n)){
+    while(i < (m + n)){
         if(q.length === 0){
             if(nums1[i] <= nums2[j] && i < m){ // right array has greater element against left
                 // i++;    
